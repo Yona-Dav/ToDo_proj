@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}All todo{% endblock %}
+{% block content %}
+
+
+<div class="row">
+{% for td in todo %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{td.title}}</h5>
+        <h6 class="card-text">{{td.details}}</h6>
+        <p class="card-text">Created at : {{td.date_creation}}</p>
+        <p class="card-text">Deadline  : {{td.deadline_date}}</p>
+        <a href="#" class="btn btn-success">Done</a>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+<a href="{% url 'add_task'%}" class="btn btn-primary mt-3">Add a task</a>
+
+
+{% endblock %}

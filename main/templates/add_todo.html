@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Add task{% endblock %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+
+    <button>submit</button>
+</form>
+
+
+ <a href="{% url 'all_todo' %}" class="btn btn-primary">All the tasks</a>
+
+
+{% endblock %}
